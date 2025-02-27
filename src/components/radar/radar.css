@@ -1,0 +1,89 @@
+.radar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000; /* Fondo oscuro */
+}
+
+.radar {
+  position: relative;
+  width: 300px; /* Ajusta el tamaño del radar */
+  height: 300px; 
+  border-radius: 50%; /* Hace que sea redondo */
+  background-image: url('../../assets/radar.png'); /* Pon aquí la ruta de la imagen */
+  background-size: contain; /* Hace que la imagen se ajuste al tamaño */
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+  animation: radar-appear 5s infinite ease-in-out;
+}
+
+.sphere {
+  position: absolute;
+  width: 20px; /* Tamaño de las esferas */
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ff0; /* Color amarillo para las esferas */
+  animation: appear 5s infinite ease-in-out;
+}
+
+.sphere1 {
+  top: 20%;
+  left: 50%;
+  animation-delay: 0s;
+}
+
+.sphere2 {
+  top: 40%;
+  left: 30%;
+  animation-delay: 1s;
+}
+
+.sphere3 {
+  top: 30%;
+  left: 50%;
+  animation-delay: 2s;
+}
+
+.sphere4 {
+  top: 75%;
+  left: 45%;
+  animation-delay: 3s;
+}
+
+.sphere5 {
+  top: 50%;
+  right: 40%;
+  animation-delay: 4s;
+}
+
+@keyframes radar-appear {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}

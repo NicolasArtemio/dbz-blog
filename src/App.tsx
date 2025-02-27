@@ -1,6 +1,6 @@
-import './App.css'
-import { useFetch } from './hooks'
-import { HomePage } from './pages';
+import Radar from './components/radar/Radar'; 
+// import { useFetch } from './hooks'
+// import { HomePage } from './pages';
 
 
 
@@ -21,7 +21,8 @@ function App() {
   return (
     <>
       {/* <div>{JSON.stringify(data)}</div> */}
-      <HomePage />
+      <Radar />
+      {/* <HomePage /> */}
     </>
   )
 }
