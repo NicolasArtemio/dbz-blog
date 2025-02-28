@@ -1,30 +1,30 @@
+import { useState, useEffect } from 'react';
 import Radar from './components/radar/Radar'; 
-// import { useFetch } from './hooks'
-// import { HomePage } from './pages';
-
-
-
-const url = "https://dragonball-api.com/api/characters";
+import { HomePage } from './pages';
 
 function App() {
 
-  // const { data, error, loading } = useFetch(url);
+  const [loading, setLoading] = useState(true);
 
-  // if (loading){
-  //   return <div>Cargando...</div>
-  // }
 
-  // if (error) {
-  //   return <div>Hubo un error: {error.message}</div>
-  // }
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false); 
+    }, 10000); 
+
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <>
-      {/* <div>{JSON.stringify(data)}</div> */}
-      <Radar />
-      {/* <HomePage /> */}
+      {loading ? (
+        <Radar />  
+      ) : (
+        <HomePage /> 
+      )}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
